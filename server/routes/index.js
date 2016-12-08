@@ -6,7 +6,7 @@
 module.exports = {
 
 	web : [
-
+		['get', '/home', 'page-controller@home']
 	],
 
 	api : [

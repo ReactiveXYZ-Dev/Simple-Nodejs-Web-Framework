@@ -1,6 +1,6 @@
 var config = require(ROOT_DIR + "/server/config");
 var mongoose = require('mongoose');
-
+var _ = require('lodash');
 // connect mongoose to db 
 mongoose.connect('mongodb://localhost/' + config.models.db);
 
@@ -51,7 +51,8 @@ class Model {
 	}
 
 	/**
-	 * Delegate function calls to underlying mongoose model
+	 * Delegate function calls and property fetching 
+	 * to underlying mongoose model
 	 * @param  {Model} model Model to be modified
 	 * @return {Proxy}       Proxy to access the model
 	 */
@@ -59,15 +60,22 @@ class Model {
 
 		return new Proxy(model, {
 
-			get: function (target, property, receiver) {
+			get: function get(target, prop) {
 
-				if (property in target) {
+				if (_.isFunction(target[prop])) {
 
-					return target[property];
+					return function wrapper() {
+
+						return target[prop] ? target[prop](...arguments) : 
+											  target.getRealModel()[prop](...arguments)
+
+					}
+
+				} else {
+
+					return target[prop] ? target[prop] : target.getRealModel()[prop];
 
 				}
-
-				return target.getRealModel[property];
 
 			}
 

@@ -30,9 +30,9 @@ class Router {
 
 		webRoutes.forEach((route) => {
 
-			var controller = route.split("@")[0];
+			var controller = route[2].split("@")[0];
 
-			var method = route.split("@")[1];
+			var method = route[2].split("@")[1];
 
 			var controller = require(config.paths.controllers + "/" + controller)();
 

@@ -1,3 +1,7 @@
+
+
+// Welcome to my app!
+
 global.ROOT_DIR = __dirname;
 
 var server = require('./server');

@@ -12,7 +12,7 @@ module.exports = {
 
 		middlewares : ROOT_DIR + "/server/middlewares",
 
-		controllers : ROOT_DIR + "/servers/controllers"
+		controllers : ROOT_DIR + "/server/controllers"
 
 	},
 
