@@ -1,0 +1,17 @@
+{
+  "name": "Class-Spy",
+  "version": "1.0.0",
+  "description": "A class watcher and planner for Umich",
+  "main": "index.js",
+  "repository": "https://github.com/ReactiveXYZ/Class-Spy.git",
+  "author": "Reactive XYZ (support@reactive.xyz)",
+  "license": "MIT",
+  "dependencies": {
+    "agenda": "^0.9.0",
+    "express": "^4.14.0",
+    "lodash": "^4.17.2",
+    "moment": "^2.17.1",
+    "mongodb": "^2.2.12",
+    "mongoose": "^4.7.2"
+  }
+}
