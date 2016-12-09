@@ -35,7 +35,7 @@ class Model {
 	 */
 	init (schema) {
 
-		this.schema = mongoose.Schema(this.schema);
+		this.schema = mongoose.Schema(schema);
 
 		this.model = mongoose.model(this.schema);
 	}
