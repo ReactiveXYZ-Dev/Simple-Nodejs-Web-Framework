@@ -74,7 +74,7 @@ class Router {
 
 		middlewareData.forEach((middleware) => {
 
-			var middlewareHandler = require(config.paths.middlewares + "/" + middlware[1]);
+			var middlewareHandler = require(config.paths.middlewares + "/" + middlware[1])();
 
 			this.app.use(middleware[0], function (req, res, next) {
 
